@@ -20,7 +20,7 @@ on the root of your repo
 `LIBS += -lnsp`
 * add LIBDIR
 ` LIBDIRS	+= $(CURDIR)/nspmini`
-* * use ``make -c mininspn`` to build the lib
+* * use ``make -c nspmini`` to build the lib
 * * or use `@$(MAKE) -C $(CURDIR)/nspmini/` on make file 
 
 ### On your program use 
