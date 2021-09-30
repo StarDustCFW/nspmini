@@ -8,7 +8,7 @@
 
 ## How to Use 
 * type ``git submodule add https://github.com/StarDustCFW/mininsp``
-* * to update use ``git submodule update --init --recursive`` and `git submodule update --recursive --remote --merge`
+* * to update use `it submodule update --recursive --remote --merge`
 on the root of your repo
 * Or just download and copy mininsp to your repo
 
