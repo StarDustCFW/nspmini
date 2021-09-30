@@ -23,7 +23,14 @@ SOFTWARE.
 #pragma once
 #include <filesystem>
 #include <vector>
+#include <cstring>
+#include <switch.h>
+#include <unistd.h>
+
 namespace mini {
+	u64 GetTitleID();
+	std::string GetTitleID_string();
+	std::vector<u64> GetTitleID_vector();
 	bool InstallSD(std::string nsp);
     bool installNspFromFile(std::vector<std::filesystem::path> ourNspList, int whereToInstall);
 }

@@ -50,13 +50,25 @@ namespace mini {
         splCryptoExit();
         splExit();
     }
+	std::vector<u64> ma_TID;
 	
 	//Install single file
 	bool InstallSD(std::string nsp){
 		std::vector<std::filesystem::path> ourTitleList={std::filesystem::path(nsp)}; 
 		return installNspFromFile(ourTitleList, 0);
 	}
-
+	//get latest ID file
+	u64 GetTitleID(){
+		return ma_TID[ma_TID.size()-1];
+	}
+	std::string GetTitleID_string(){
+		char TID[0x9F];
+		sprintf(TID, "%016lX",GetTitleID());
+		return std::string(TID);
+	}
+	std::vector<u64> GetTitleID_vector(){
+		return ma_TID;
+	}
 
     bool installNspFromFile(std::vector<std::filesystem::path> ourTitleList, int whereToInstall)
     {
@@ -69,6 +81,7 @@ namespace mini {
 
         try
         {
+			ma_TID={};
             for (titleItr = 0; titleItr < ourTitleList.size(); titleItr++) {
                 std::unique_ptr<tin::install::Install> installTask;
 
@@ -78,6 +91,8 @@ namespace mini {
                 LOG_DEBUG("%s\n", "Preparing installation");
                 installTask->Prepare();
                 installTask->Begin();
+				u64 m_tid = installTask->GetTitleId(titleItr);
+				ma_TID.push_back(m_tid);
             }
         }
         catch (std::exception& e)

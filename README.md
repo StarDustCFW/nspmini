@@ -31,7 +31,6 @@ And
 ```c++
 //To install a single File
 mini::InstallSD(std::string nsp);
-	
 //Or this to install a vector of files
 std::vector<std::filesystem::path> ourTitleList={
 	std::filesystem::path(std::string nsp),
@@ -39,25 +38,33 @@ std::vector<std::filesystem::path> ourTitleList={
 }; 
 mini::installNspFromFile(ourTitleList, 0);// 0 is SDcard (default), 1 is BuildInUser 
 
+//DATA
+
+//Get Title ID u64 format of latest
+u64 m_tid = mini::GetTitleID();
+
+//Get Title ID string format of latest
+std::string tid = mini::GetTitleID_string();
+
+//Get a list of all titles ids installed with nspmini
+std::vector<u64> tidlist = mini::GetTitleID_vector();
 ```
 Example
 ```c++
 ...
 #include "nspmini.hpp"
 int main(){
-
+	//Install nsp
 	mini::InstallSD("romfs:/myforwader.nsp");
 	mini::InstallSD("sdmc:/myapp.nsp");
+	
+	//to launch the installed nsp from your app use:
+	unsigned long long AppTitleID =  mini::GetTitleID();
+	appletRequestLaunchApplication (AppTitleID , NULL);
 }
 ...
 ```
 To install or update Nsp files
-### TIP
-to launch the installed nsp from your app  use
-```c++
-unsigned long long AppTitleID = 0x05B9DB505ABBE000;//replace this with your App id
-appletRequestLaunchApplication (AppTitleID , NULL);
-```
 
 
 # Credits
