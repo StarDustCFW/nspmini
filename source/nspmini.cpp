@@ -26,7 +26,7 @@ SOFTWARE.
 #include <ctime>
 #include <thread>
 #include <memory>
-#include "sdInstall.hpp"
+#include "nspmini.hpp"
 #include "install/nsp.hpp"
 #include "nx/fs.hpp"
 #include "extra/error.hpp"

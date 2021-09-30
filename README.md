@@ -25,7 +25,7 @@ on the root of your repo
 
 ### On your program use 
 ```c++
-#include "sdInstall.hpp"
+#include "nspmini.hpp"
 ```
 And
 ```c++
@@ -43,7 +43,7 @@ mini::installNspFromFile(ourTitleList, 0);// 0 is SDcard (default), 1 is BuildIn
 Example
 ```c++
 ...
-#include "sdInstall.hpp"
+#include "nspmini.hpp"
 int main(){
 
 	mini::InstallSD("romfs:/myforwader.nsp");
