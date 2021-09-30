@@ -10,7 +10,7 @@
 * type ``git submodule add https://github.com/StarDustCFW/nspmini``
 * * to update use `git submodule update --recursive --init --remote --merge`
 on the root of your repo
-* Or just download and copy mininsp to your repo
+* Or just download and copy nspmini to your repo
 
 
 ### On the makefile
