@@ -81,7 +81,6 @@ namespace mini {
 
         try
         {
-			ma_TID={};
             for (titleItr = 0; titleItr < ourTitleList.size(); titleItr++) {
                 std::unique_ptr<tin::install::Install> installTask;
 
