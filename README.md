@@ -60,6 +60,7 @@ int main(){
 	
 	//to launch the installed nsp from your app use:
 	unsigned long long AppTitleID =  mini::GetTitleID();
+	//AppTitleID is a u64 in hex like this 0x05B9DB505ABBE000
 	appletRequestLaunchApplication (AppTitleID , NULL);
 }
 ...
