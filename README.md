@@ -1,4 +1,4 @@
-# mininsp c++
+# nspmini c++
 ## Simple Lib code to Install nsp on any nro or app
 * since Applet mode not have much memory some apps use NSP
 
