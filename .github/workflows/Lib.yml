@@ -1,5 +1,5 @@
 
-name: Build Payload
+name: Build lib
 
 on: [push,workflow_dispatch]
 jobs:
@@ -16,9 +16,9 @@ jobs:
         
     - name: Make app
       run: |
-        make -j$(nproc)
+        make -j$(nproc) release
         
     - uses: actions/upload-artifact@master
       with:
-        name: Payload
-        path: output/*
+        name: Lib release
+        path: release/*

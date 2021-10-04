@@ -19,6 +19,7 @@ BUILD		:=	build
 TARGET		:=  nsp
 SOURCES		:=	source
 INCLUDES	:=	include
+RELEASE     :=  release
 
 #---------------------------------------------------------------------------------
 # options for code generation
@@ -86,15 +87,23 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 			-I$(CURDIR)/$(BUILD)
 
-.PHONY: $(BUILD) clean all
+.PHONY: $(BUILD) clean all release
 
 #---------------------------------------------------------------------------------
+
+
 all: $(BUILD)
 
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@
 	@[ -d lib ] || mkdir -p lib
 	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+
+#---------------------------------------------------------------------------------
+release :$(BUILD)
+	@mkdir -p $(RELEASE)
+	@cp -r lib $(RELEASE)
+	@cp -r  include $(RELEASE)
 
 #---------------------------------------------------------------------------------
 clean:

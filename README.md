@@ -11,6 +11,7 @@
 * * to update use `git submodule update --recursive --init --remote --merge`
 on the root of your repo
 * Or just download and copy nspmini to your repo
+* Also using `make release` to get only includes and lib
 
 
 ### On the makefile
