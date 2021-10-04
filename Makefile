@@ -109,6 +109,7 @@ release :$(BUILD)
 clean:
 	@echo clean ...
 	@rm -rf lib
+	@rm -rf $(RELEASE)
 	@rm -fr $(BUILD) $(OUTPUT).a
 
 #---------------------------------------------------------------------------------
