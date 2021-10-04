@@ -22,7 +22,6 @@ SOFTWARE.
 
 #include "nx/nca_writer.h"
 #include "extra/error.hpp"
-#include <zstd.h>
 #include <string.h>
 #include "extra/crypto.hpp"
 #include "extra/title_util.hpp"

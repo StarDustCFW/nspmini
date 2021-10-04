@@ -53,7 +53,8 @@ LIBDIRS	:= $(PORTLIBS) $(LIBNX)
 #---------------------------------------------------------------------------------
 ifneq ($(BUILD),$(notdir $(CURDIR)))
 #---------------------------------------------------------------------------------
-export SOURCES	+=	$(foreach dir,$(SOURCES)/,$(sort $(dir $(wildcard $(dir)/*/ $(dir)/*/*/ $(dir)/*/*/*/))))
+
+SOURCES	:=	$(foreach dir,$(SOURCES),$(shell find $(dir) -maxdepth 10 -type d))
 
 export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
 			$(foreach dir,$(DATA),$(CURDIR)/$(dir))
