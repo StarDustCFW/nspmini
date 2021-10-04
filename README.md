@@ -12,6 +12,7 @@
 on the root of your repo
 * Or just download and copy nspmini to your repo
 * Also using `make release` to get only includes and lib
+* * or taking [a pre build](https://github.com/StarDustCFW/nspmini/actions)
 
 
 ### On the makefile
