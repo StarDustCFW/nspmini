@@ -108,8 +108,10 @@ release :$(BUILD)
 
 portlib :$(BUILD)
 	@mkdir -p $(PORTLIBS)
+	$(info 'Installing PortLib...')
 	@cp -r lib $(PORTLIBS)/
 	@cp -r  include $(PORTLIBS)/
+	$(info 'Done')
 
 #---------------------------------------------------------------------------------
 clean:

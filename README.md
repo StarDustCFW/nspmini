@@ -8,26 +8,17 @@
 
 ## How to Use 
 * type ``git clone https://github.com/StarDustCFW/nspmini``
-* type ``git -C nspmini pull``
-* type ``make -C portlib`` to install has a port lib
-* * to update use `git -C nspmini pull`
-on the root of your repo
-* Or just download and copy nspmini to your repo
-* Also using `make release` to get only includes and lib
-* * or taking [a pre build](https://github.com/StarDustCFW/nspmini/actions)
-
+* type ``make -C nspmini portlib`` to install has a port lib
+* * to update use `git -C nspmini pull` & `make -C nspmini portlib`
+* * or taking [a pre build](https://github.com/StarDustCFW/nspmini/actions) and copy to :
+* * * windows ``C:\devkitPro\portlibs\switch``
+* * * Linux ``/opt/devkitpro/portlibs/switch``
 
 ### On the makefile
-* add include
-`INCLUDES += nspmini/include `
-* add lib 
+* add the lib 
 `LIBS += -lnsp`
-* add LIBDIR
-` LIBDIRS	+= $(CURDIR)/nspmini`
-* * use ``make -c nspmini`` to build the lib
-* * or use `@$(MAKE) -C $(CURDIR)/nspmini/` on make file 
 
-### On your program use 
+### On your program code use 
 ```c++
 #include "nspmini.hpp"
 ```
