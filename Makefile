@@ -107,11 +107,11 @@ release :$(BUILD)
 	@cp -r  include $(RELEASE)
 
 portlib :$(BUILD)
+	$(info Installing PortLib...)
 	@mkdir -p $(PORTLIBS)
-	$(info 'Installing PortLib...')
 	@cp -r lib $(PORTLIBS)/
 	@cp -r  include $(PORTLIBS)/
-	$(info 'Done')
+	$(info Done)
 
 #---------------------------------------------------------------------------------
 clean:
