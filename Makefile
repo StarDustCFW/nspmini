@@ -106,6 +106,11 @@ release :$(BUILD)
 	@cp -r lib $(RELEASE)
 	@cp -r  include $(RELEASE)
 
+portlib :$(BUILD)
+	@mkdir -p $(PORTLIBS)
+	@cp -r lib $(PORTLIBS)/
+	@cp -r  include $(PORTLIBS)/
+
 #---------------------------------------------------------------------------------
 clean:
 	@echo clean ...

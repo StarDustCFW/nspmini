@@ -27,11 +27,11 @@ SOFTWARE.
 #include <thread>
 #include <memory>
 #include "nspmini.hpp"
-#include "install/nsp.hpp"
-#include "nx/fs.hpp"
-#include "extra/error.hpp"
-#include "extra/debug.h"
-#include "nx/ipc/tin_ipc.h"
+#include "nspmini/install/nsp.hpp"
+#include "nspmini/nx/fs.hpp"
+#include "nspmini/extra/error.hpp"
+#include "nspmini/extra/debug.h"
+#include "nspmini/nx/ipc/tin_ipc.h"
 
 namespace mini {
 
