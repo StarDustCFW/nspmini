@@ -20,7 +20,7 @@
 
 ### On your program code use 
 ```c++
-#include "nspmini.hpp"
+#include <nspmini.hpp>
 ```
 And
 ```c++
@@ -64,7 +64,7 @@ To install or update Nsp files
 
 
 
-##  Used has Submodule
+#  Use has Submodule (Optional)
 * type ``git submodule add https://github.com/StarDustCFW/nspmini``
 * * to update use `git submodule update --recursive --init --remote --merge`
 on the root of your repo
