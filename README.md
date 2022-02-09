@@ -16,7 +16,7 @@
 
 ### On the makefile
 * add the lib 
-`LIBS += -lnsp`
+```LIBS += -lnsp `freetype-config --libs` ```
 
 ### On your program code use 
 ```c++
