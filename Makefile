@@ -117,6 +117,7 @@ release :$(BUILD)
 	@mkdir -p $(RELEASE)
 	@cp -r lib $(RELEASE)
 	@cp -r  include $(RELEASE)
+	@zip lib$(TARGET).zip -9 -m -r $(RELEASE)
 
 portlib :$(BUILD)
 	$(info Installing PortLib...)

@@ -4,3 +4,5 @@ lib/
 release
 *.a
 *.d
+*.zip
+*.rar
