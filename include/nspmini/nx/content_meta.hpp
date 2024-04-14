@@ -34,7 +34,7 @@ namespace nx::ncm
     {
         u8 hash[0x20];
         NcmContentInfo content_info;
-    } PACKED;
+    };
 
     struct PackagedContentMetaHeader
     {
@@ -71,3 +71,8 @@ namespace nx::ncm
             void GetInstallContentMeta(tin::data::ByteBuffer& installContentMetaBuffer, NcmContentInfo& cnmtContentInfo, bool ignoreReqFirmVersion);
     };
 }
+
+// Lugar donde se usan las estructuras
+#pragma pack(push, 1)
+// Código que usa las estructuras empaquetadas
+#pragma pack(pop)

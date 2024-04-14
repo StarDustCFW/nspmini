@@ -87,6 +87,18 @@ export HFILES	:=	$(addsuffix .h,$(subst .,_,$(BINFILES)))
 export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I$(CURDIR)/$(dir)) \
 			$(foreach dir,$(LIBDIRS),-I$(dir)/include) \
 			-I$(CURDIR)/$(BUILD)
+# Verifica si el sistema es Windows o no
+ifeq ($(OS),Windows_NT)
+    # Comandos específicos para Windows
+    CM1:= cp -u -r lib $(PORTLIBS)/
+    CM2:= cp -u -r include $(PORTLIBS)/
+else
+    # Comandos específicos para sistemas Unix-like (Linux, macOS, etc.)
+    CM1:= sudo cp -u -r lib $(PORTLIBS)/
+    CM2:= sudo cp -u -r include $(PORTLIBS)/
+endif
+
+
 
 .PHONY: $(BUILD) clean all release
 
@@ -108,9 +120,9 @@ release :$(BUILD)
 
 portlib :$(BUILD)
 	$(info Installing PortLib...)
-	@mkdir -p $(PORTLIBS)
-	@sudo cp -u -r lib $(PORTLIBS)/
-	@sudo cp -u -r include $(PORTLIBS)/
+	@mkdir -p $(PORTLIBS)/
+	@$(CM1)
+	@$(CM2)
 	$(info Done)
 
 #---------------------------------------------------------------------------------
