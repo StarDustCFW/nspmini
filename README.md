@@ -16,7 +16,7 @@
 
 ### On the makefile
 * add the lib 
-```LIBS += -lnsp `freetype-config --libs` ```
+```LIBS += -lnsp -lnsp -lnx -lm -lz ```
 
 ### On your program code use 
 ```c++
@@ -77,7 +77,7 @@ on the root of your repo
 * add include
 `INCLUDES += nspmini/include `
 * add lib 
-`LIBS += -lnsp`
+`LIBS += -lnsp -lnx -lm -lz`
 * add LIBDIR
 ` LIBDIRS	+= $(CURDIR)/nspmini`
 * * use ``make -c nspmini`` to build the lib
