@@ -32,7 +32,7 @@ CFLAGS	:=	-g -w -D__SWITCH__ \
 			$(ARCH) \
 
 CFLAGS	+=	$(INCLUDE)
-CFLAGS  +=  `freetype-config --cflags`
+#CFLAGS  +=  `freetype-config --cflags`
 
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fexceptions -std=gnu++17
 
